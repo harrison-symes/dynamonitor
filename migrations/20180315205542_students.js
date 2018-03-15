@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('age')
     table.string('lesson_time')
     table.string('lesson_day')
+    table.integer('school_id')
     table.timestamp('created_at').defaultTo(knex.fn.now())
   })
 };
