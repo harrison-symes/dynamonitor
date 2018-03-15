@@ -8,37 +8,47 @@ import Nav from './Nav'
 import Meeting from './Meeting'
 import History from './History'
 
-const App = ({auth}) => (
-  <Router>
-    <div className="container has-text-centered">
+const App = ({auth}) => (<Router>
+<section className="hero is-success is-fullheight">
+    <div className="hero-head">
+      <header className="navbar">
+        <div className="container">
+          <div className="navbar-brand">
+            <a className="navbar-item">Dyna-Monitor</a>
+              <span className="navbar-burger burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroC" className="navbar-menu">
+              <div className="navbar-end">
+                <a className="navbar-item is-active">
+                  Login
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
 
-      <div className="hero is-small is-primary">
-        <div className="hero-body has-text-centered">
-          <Link to='/' className="">
-            <h1 className="title is-1">Dyna-Monitor</h1>
-          </Link>
-          <Nav />
-        </div>
+
+      {!auth.isAuthenticated && <Route exact path="/" component={Login}/>}
+
+
+      <div className="hero-foot">
       </div>
 
       <div className=''>
-        {!auth.isAuthenticated &&
-          <Route exact path="/" component={Login} />
-        }
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/meeting" component={Meeting} />
-        <Route path="/history" component={History} />
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/meeting" component={Meeting}/>
+        <Route path="/history" component={History}/>
       </div>
-
-    </div>
+    </section>
   </Router>
-)
+  )
 
-const mapStateToProps = ({auth}) => {
-  return {
-    auth
-  }
-}
+  const mapStateToProps = ({auth}) => {return {auth}}
 
-export default connect(mapStateToProps)(App)
+  export default connect(mapStateToProps)(App)
