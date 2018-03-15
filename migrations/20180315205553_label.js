@@ -1,12 +1,13 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTableIfNotExists('label', table => {
+  return knex.schema.createTableIfNotExists('labels', table => {
     table.increments('id')
     table.string('name')
-    table.boolean('primary')
+    table.string('short')
+    table.boolean('is_primary')
   })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists('label')
+  return knex.schema.dropTableIfExists('labels')
 };

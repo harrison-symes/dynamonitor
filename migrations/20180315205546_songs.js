@@ -3,7 +3,7 @@ const {tz} = require('moment-timezone')
 
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTableIfNotExists('students', table => {
+  return knex.schema.createTableIfNotExists('songs', table => {
     table.increments('id')
     table.string('name')
     table.integer('difficulty')
@@ -13,5 +13,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists('students')
+  return knex.schema.dropTableIfExists('songs')
 };
