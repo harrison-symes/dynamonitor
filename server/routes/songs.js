@@ -1,25 +1,25 @@
 const router = require('express').Router()
 
-const studentsDb = require('../db/students')
+const songsDb = require('../db/songs')
 
 router.get('/', (req, res) => {
-  studentsDb.getStudents()
-    .then(students => res.json(students))
+  songsDb.getSongs()
+    .then(songs => res.json(songs))
     .catch(err => console.log({err}))
 })
 
 router.post('/', (req, res) => {
-  studentsDb.insertStudent(req.body)
-    .then(student => res.status(201).json(student))
+  songsDb.insertSong(req.body)
+    .then(song => res.status(201).json(song))
 })
 
 // router.get('/:id/songs', () => {
-//   studentsDb.getStudentSongs(req.params.id)
+//   songsDb.getStudentSongs(req.params.id)
 //     .then(songs => res.status(200).json(songs))
 // })
 //
 // router.post('/:id/songs', () => {
-//   studentsDb.insertStudentSong(req.params.id, req.body)
+//   songsDb.insertStudentSong(req.params.id, req.body)
 //     .then(songs => res.status(200).json(songs))
 // })
 
