@@ -15,7 +15,7 @@ const App = ({auth}) => (
       <div className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to='/' className="">
-            <h1 className="title is-1">$how Me The Money</h1>
+            <h1 className="title is-1">Dyna-Monitor</h1>
           </Link>
           <Nav />
         </div>

@@ -1,13 +1,13 @@
-const {hashSync} = require('bcrypt')
-const saltRounds = 10
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('users').del()
+  return knex('table_name').del()
     .then(function () {
       // Inserts seed entries
-      return knex('users').insert([
-        {id: 1, user_name: 'symesharr', first_name: 'Harrison', 'last_name': 'Symes', hash: hashSync('Krang', saltRounds), hourly_wage: 300}
+      return knex('table_name').insert([
+        {id: 1, colName: 'rowValue1'},
+        {id: 2, colName: 'rowValue2'},
+        {id: 3, colName: 'rowValue3'}
       ]);
     });
 };
