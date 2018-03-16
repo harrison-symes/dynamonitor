@@ -35,7 +35,8 @@ class Login extends React.Component {
           <form className="form">
             {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
             <input required className="input" placeholder="Username" type="text" name="username" />
-            <br/>
+            <br />
+            <br />
             <input required className="input" placeholder="Password" type="text" name="password" />
             <input className="button is-success" value="Login" type="submit" />
           </form>

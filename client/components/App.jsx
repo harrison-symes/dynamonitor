@@ -1,6 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import '../../sass/styles.scss'
 
 import Login from './Login'
 import Nav from './Nav'
@@ -31,9 +32,12 @@ const App = ({auth}) => (<Router>
         </header>
       </div>
 
+
+      {!auth.isAuthenticated && <Route exact path="/" component={Login}/>}
+
+
       <div className=''>
         <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
         <Route path="/meeting" component={Meeting}/>
         <Route path="/history" component={History}/>
       </div>
