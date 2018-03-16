@@ -32,7 +32,7 @@ class Login extends React.Component {
           <h1 className="title">
             Dyna-Monitor
           </h1>
-          <form className="form">
+          <form className="form" onSubmit={this.submit}>
             {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
             <input required className="input" placeholder="Username" type="text" name="username" />
             <br />

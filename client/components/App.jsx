@@ -9,7 +9,7 @@ import Meeting from './Meeting'
 import History from './History'
 
 const App = ({auth}) => (<Router>
-<section className="hero is-success is-fullheight">
+<section className="hero is-primary is-fullheight">
     <div className="hero-head">
       <header className="navbar">
         <div className="container">
